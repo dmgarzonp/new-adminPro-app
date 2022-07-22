@@ -5,16 +5,19 @@
   <div class="login-register" style="background-image:url(./assets/images/background/fondo-registro4.png);">
     <div class="login-box card">
       <div class="card-body">
-        <form class="form-horizontal form-material" id="loginform" action="index.html">
+        <form class="form-horizontal form-material"
+              (submit)="login()"
+              id="loginform">
+
           <h3 class="box-title m-b-20">Inicia Sesion</h3>
           <div class="form-group ">
             <div class="col-xs-12">
-              <input class="form-control" type="text" required="" placeholder="Username">
+              <input class="form-control" type="text"  placeholder="Username">
             </div>
           </div>
           <div class="form-group">
             <div class="col-xs-12">
-              <input class="form-control" type="password" required="" placeholder="Password">
+              <input class="form-control" type="password"  placeholder="Password">
             </div>
           </div>
           <div class="form-group row">
