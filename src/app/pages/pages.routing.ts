@@ -1,6 +1,11 @@
+//Propios de angular
 import { Routes, RouterModule } from '@angular/router';
 import { NgModule } from "@angular/core";
 
+//Servicios
+import { AuthGuard } from '../guards/auth.guard';
+
+//Creadas
 import { PagesComponent } from './pages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProgressComponent } from './progress/progress.component';
@@ -10,10 +15,10 @@ import { PromesasComponent } from './promesas/promesas.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
 
 const routes: Routes = [
-
   {
     path: 'dashboard',
     component: PagesComponent,
+    canActivate: [AuthGuard],
     children: [
       { path: '', component: DashboardComponent, data: { titulo: 'Dashboard'} },
       { path: 'progress', component: ProgressComponent, data: { titulo: 'ProgresBar'} },
